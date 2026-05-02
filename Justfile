@@ -7,6 +7,7 @@ dev:
 
 build:
     dx bundle --web --ssg --release
+    cp sw.js target/dx/samutils/release/web/public/sw.js
 
 clean:
     rm -rf target

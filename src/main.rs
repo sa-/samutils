@@ -6,6 +6,8 @@ use tools::QrCodeTool;
 
 const FAVICON: Asset = asset!("/assets/favicon.ico");
 const TAILWIND_CSS: Asset = asset!("/assets/tailwind.css");
+const MANIFEST: Asset = asset!("/assets/manifest.json");
+const REGISTER_SW: Asset = asset!("/assets/register-sw.js");
 
 fn main() {
     dioxus::launch(App);
@@ -24,6 +26,9 @@ fn App() -> Element {
     rsx! {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: TAILWIND_CSS }
+        document::Link { rel: "manifest", href: MANIFEST }
+        document::Meta { name: "theme-color", content: "#000000" }
+        document::Script { src: REGISTER_SW }
         Router::<Route> {}
     }
 }
