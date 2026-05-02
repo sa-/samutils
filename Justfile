@@ -18,7 +18,7 @@ assert-git-clean:
         exit 1
     fi
 
-deploy: assert-git-clean build
+deploy: build assert-git-clean
     npx wrangler pages deploy \
         target/dx/samutils/release/web/public \
         --project-name samutils
