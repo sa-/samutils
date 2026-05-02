@@ -4,3 +4,6 @@
 
 mod hero;
 pub use hero::Hero;
+
+mod tool_header;
+pub use tool_header::ToolHeader;

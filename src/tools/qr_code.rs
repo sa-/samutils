@@ -1,3 +1,4 @@
+use crate::components::ToolHeader;
 use dioxus::prelude::*;
 use qrcodegen::{QrCode, QrCodeEcc};
 
@@ -56,34 +57,16 @@ pub fn QrCodeTool() -> Element {
             class: "min-h-screen flex flex-col items-center px-2 py-4 transition-colors duration-300 {theme}",
             style: "font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;",
 
-            header {
-                class: "flex justify-between items-center w-full max-w-xl mb-4",
-                h1 { class: "text-2xl font-normal tracking-widest", "samutil | qr code" }
-                button {
-                    class: "border px-4 py-2 text-sm cursor-pointer transition-colors duration-300 hover:bg-[#888] hover:text-white hover:border-[#888] {border_cls} {text_cls}",
-                    onclick: move |_| { let v = *dark.read(); dark.set(!v); },
-                    if *dark.read() { "LIGHT" } else { "DARK" }
-                }
+            ToolHeader {
+                title: "qr code",
+                dark: *dark.read(),
+                on_toggle_dark: move |_| { let v = *dark.read(); dark.set(!v); },
             }
 
             div {
                 class: "w-full max-w-xl flex flex-col gap-4 flex-1",
 
-                // QR display
-                div {
-                    class: "flex-1 flex flex-col items-center justify-center border min-h-80 p-4 {border_cls}",
-                    if let Some(svg_str) = svg.read().as_ref() {
-                        div {
-                            class: "w-72 h-72",
-                            dangerous_inner_html: "{svg_str}",
-                        }
-                    } else {
-                        span {
-                            class: "text-[#888] text-sm text-center",
-                            "Enter text below to generate QR code"
-                        }
-                    }
-                }
+                
 
                 // Controls
                 div {
@@ -134,7 +117,25 @@ pub fn QrCodeTool() -> Element {
                         }
                     }
                 }
+
+                // QR display
+                div {
+                    class: "flex-1 flex flex-col items-center justify-center border min-h-80 p-4 {border_cls}",
+                    if let Some(svg_str) = svg.read().as_ref() {
+                        div {
+                            class: "w-72 h-72",
+                            dangerous_inner_html: "{svg_str}",
+                        }
+                    } else {
+                        span {
+                            class: "text-[#888] text-sm text-center",
+                            "Enter text below to generate QR code"
+                        }
+                    }
+                }
             }
+
+            
 
             a {
                 href: "/",
