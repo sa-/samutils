@@ -17,7 +17,7 @@ fn main() {
 enum Route {
     #[route("/")]
     Home {},
-    #[route("/qr")]
+    #[route("/qr-code-generator")]
     QrCode {},
 }
 
@@ -60,7 +60,7 @@ fn Home() -> Element {
 
                 Link {
                     to: Route::QrCode {},
-                    class: "border p-4 text-left no-underline transition-colors duration-300 hover:bg-[#888] hover:text-white hover:border-[#888] {border} {theme}",
+                    class: "border p-4 text-center no-underline transition-colors duration-300 hover:bg-[#888] hover:text-white hover:border-[#888] {border} {theme}",
                     "QR CODE GENERATOR"
                 }
             }

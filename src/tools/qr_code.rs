@@ -134,14 +134,6 @@ pub fn QrCodeTool() -> Element {
                     }
                 }
             }
-
-            
-
-            a {
-                href: "/",
-                class: "mt-8 text-[#888] text-sm hover:text-current transition-colors",
-                "← BACK TO HOME"
-            }
         }
     }
 }
