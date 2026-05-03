@@ -1,4 +1,4 @@
-use crate::components::ToolHeader;
+use crate::components::SamutilHeader;
 use dioxus::prelude::*;
 use qrcodegen::{QrCode, QrCodeEcc};
 
@@ -57,10 +57,11 @@ pub fn QrCodeTool() -> Element {
             class: "min-h-screen flex flex-col items-center px-2 py-4 transition-colors duration-300 {theme}",
             style: "font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;",
 
-            ToolHeader {
-                title: "qr code",
+            SamutilHeader {
+                title: "qr code gen",
                 dark: *dark.read(),
                 on_toggle_dark: move |_| { let v = *dark.read(); dark.set(!v); },
+                show_back: true,
             }
 
             div {
