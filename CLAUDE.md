@@ -1,8 +1,8 @@
-# CLAUDE.md - samutil
+# CLAUDE.md - samutils
 
 ## Project Overview
 
-**samutil** is a dioxus based collection of standalone web-based utility tools packaged as a single-page application launcher. Each tool is mostly self-contained, designed with a minimalist aesthetic and no external dependencies if possible. It uses `dx bundle --web --ssg --release` to publish to cloudflare pages, where no backend is required. 
+**samutils** is a dioxus based collection of standalone web-based utility tools packaged as a single-page application launcher. Each tool is mostly self-contained, designed with a minimalist aesthetic and no external dependencies if possible. It uses `dx bundle --web --ssg --release` to publish to cloudflare pages, where no backend is required. 
 
 ## Architecture
 

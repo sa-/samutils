@@ -11,7 +11,7 @@ pub fn ToolHeader(title: String, dark: bool, on_toggle_dark: EventHandler<()>) -
             a {
                 href: "/",
                 class: "text-[#888] text-sm hover:text-current transition-colors justify-self-start",
-                "← samutil"
+                "← samutils"
             }
             span {
                 class: "text-2xl font-normal tracking-widest justify-self-center",

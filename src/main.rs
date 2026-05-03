@@ -47,7 +47,7 @@ fn Home() -> Element {
 
             header {
                 class: "flex justify-between items-center w-full max-w-xl mb-8",
-                h1 { class: "text-2xl font-normal tracking-widest", "samutil" }
+                h1 { class: "text-2xl font-normal tracking-widest", "samutils" }
                 button {
                     class: "{btn_cls}",
                     onclick: move |_| { let v = *dark.read(); dark.set(!v); },

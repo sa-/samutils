@@ -1,6 +1,6 @@
 {
-  "name": "samutil",
-  "short_name": "samutil",
+  "name": "samutils",
+  "short_name": "samutils",
   "description": "Web utility tools",
   "start_url": "/",
   "display": "standalone",
